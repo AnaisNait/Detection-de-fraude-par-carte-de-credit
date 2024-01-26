@@ -12,20 +12,17 @@ La détection de la fraude bancaire a connu une transformation significative au 
 
 ### Antiquité à Moyen Âge :  
 Les premières formes de fraudes financières étaient souvent liées à la contrefaçon de pièces de monnaie et à la falsification de documents.[1]  
-#19ème siècle :  
+### 19ème siècle :  
 L'introduction des chèques a donné lieu à des fraudes telles que la falsification de signatures.
 Les banques ont commencé à embaucher des experts en écriture pour vérifier l'authenticité des signatures.[2]  
 Cependant, cette approche était limitée par la vitesse de traitement et la subjectivité des évaluations.  
-
 ### Début du 20ème siècle :  
 L'avènement des transactions électroniques a introduit de nouveaux défis. Les premières formes de fraude par cartes de crédit ont émergé.  
 Les banques ont commencé à utiliser des méthodes statistiques pour détecter des modèles inhabituels dans les transactions.[3]  
-
 ### Années 1960-1970 :  
 L'essor des ordinateurs a ouvert la voie à automatiser de nombreuses opérations. Cela a permis d'améliorer l'efficacité, mais a également créé de nouvelles vulnérabilités à exploiter.  
 Les banques ont commencé à utiliser des systèmes de détection automatisés pour surveiller les activités financières suspectes. Cela a souvent été basé sur des règles prédéfinies et des modèles statistiques.[4]  
 les modèles basés sur la régression logistique étaient parmi les approches les plus utilisées pour identifier les transactions potentiellement frauduleuses. Ces modèles pouvaient prendre en compte divers paramètres, tels que le montant, l'emplacement, l'heure, etc., et attribuer des scores de probabilité à ces transactions. Cependant, ils étaient limités dans leur capacité à capturer des schémas de fraude complexes, en particulier lorsque les relations entre les variables sont non linéaires.   
-
 ### Années 1990 à aujourd'hui :    
 L'avènement d'Internet a conduit à des fraudes en ligne, telles que le vol d'identité et la fraude par phishing.
 Les banques ont développé des outils de détection avancés basés sur l'intelligence artificielle et l'apprentissage automatique pour détecter les schémas frauduleux.[5]  
