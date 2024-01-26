@@ -11,21 +11,21 @@ La fraude par carte de crédit demeure l'une des manifestations les plus répand
 La détection de la fraude bancaire a connu une transformation significative au fil des décennies, s'adaptant aux évolutions technologiques et aux changements dans les modèles de comportement des fraudeurs. Cette section offre une rétrospective sur les différentes approches qui ont marqué l'histoire de la détection de fraude.  
 
 ### Antiquité à Moyen Âge :  
-Les premières formes de fraudes financières étaient souvent liées à la contrefaçon de pièces de monnaie et à la falsification de documents.[1]  
-### 19ème siècle :  
-L'introduction des chèques a donné lieu à des fraudes telles que la falsification de signatures.
-Les banques ont commencé à embaucher des experts en écriture pour vérifier l'authenticité des signatures.[2]  
+Les premières formes de fraudes financières étaient souvent liées à la contrefaçon de pièces de monnaie et à la falsification de documents.  
+### 19ème siècle :   
+L'introduction des chèques a donné lieu à des fraudes telles que la falsification de signatures.  
+Les banques ont commencé à embaucher des experts en écriture pour vérifier l'authenticité des signatures.
 Cependant, cette approche était limitée par la vitesse de traitement et la subjectivité des évaluations.  
 ### Début du 20ème siècle :  
 L'avènement des transactions électroniques a introduit de nouveaux défis. Les premières formes de fraude par cartes de crédit ont émergé.  
-Les banques ont commencé à utiliser des méthodes statistiques pour détecter des modèles inhabituels dans les transactions.[3]  
+Les banques ont commencé à utiliser des méthodes statistiques pour détecter des modèles inhabituels dans les transactions.  
 ### Années 1960-1970 :  
-L'essor des ordinateurs a ouvert la voie à automatiser de nombreuses opérations. Cela a permis d'améliorer l'efficacité, mais a également créé de nouvelles vulnérabilités à exploiter.  
-Les banques ont commencé à utiliser des systèmes de détection automatisés pour surveiller les activités financières suspectes. Cela a souvent été basé sur des règles prédéfinies et des modèles statistiques.[4]  
+L'essor des ordinateurs a ouvert la voie à automatiser de nombreuses opérations. Cela a permis d'améliorer l'efficacité, mais a également créé de nouvelles vulnérabilités à exploiter.   
+Les banques ont commencé à utiliser des systèmes de détection automatisés pour surveiller les activités financières suspectes. Cela a souvent été basé sur des règles prédéfinies et des modèles statistiques.  
 les modèles basés sur la régression logistique étaient parmi les approches les plus utilisées pour identifier les transactions potentiellement frauduleuses. Ces modèles pouvaient prendre en compte divers paramètres, tels que le montant, l'emplacement, l'heure, etc., et attribuer des scores de probabilité à ces transactions. Cependant, ils étaient limités dans leur capacité à capturer des schémas de fraude complexes, en particulier lorsque les relations entre les variables sont non linéaires.   
 ### Années 1990 à aujourd'hui :    
 L'avènement d'Internet a conduit à des fraudes en ligne, telles que le vol d'identité et la fraude par phishing.
-Les banques ont développé des outils de détection avancés basés sur l'intelligence artificielle et l'apprentissage automatique pour détecter les schémas frauduleux.[5]  
+Les banques ont développé des outils de détection avancés basés sur l'intelligence artificielle et l'apprentissage automatique pour détecter les schémas frauduleux.  
 
 #### _Méthodes d'apprentissage automatique:_  
 * Machines à Vecteurs de Support (SVM):  
@@ -39,12 +39,6 @@ Les méthodes de clustering sont utilisées pour identifier des groupes de trans
 Les réseaux de neurones peuvent apprendre des représentations complexes à partir de données transactionnelles, permettant la détection de schémas de fraude non linéaires.  
 
 
-# 3- Bibliographie  
-[1] Les travaux historiques sur la monnaie et les archives médiévales.  
-[2] Documents bancaires historiques et archives du XIXe siècle.  
-[3] Documents bancaires et articles sur l'histoire des transactions électroniques.  
-[4] Documents sur l'histoire de l'informatique en banque.  
-[5] Documents sur l'histoire de la sécurité informatique et des technologies de détection de fraude.  
 
 
 
