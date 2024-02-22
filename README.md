@@ -75,8 +75,8 @@ Nous allons afficher des informations sur le DataFrame (le nombre total d'entré
 ```
 data.info()  
 ```
-RangeIndex: 284807 entries, 0 to 284806  
-Data columns (total 31 columns):  
+    RangeIndex: 284807 entries, 0 to 284806  
+    Data columns (total 31 columns):  
          Column  Non-Null Count  Dtype   
      0    Time    284807 non-null  float64   
      1    V1      284807 non-null  float64   
