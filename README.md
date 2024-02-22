@@ -70,7 +70,68 @@ Dans ce cas, 2 méthodes de régression logistique ont été utilisées afin de 
 En utilisant La Weighted Logistic Regression, un excellent résultat avec 100% de réussite pour chaque classe a été obtenu, mieux qu'en appliquant la régression logiqtique classique.    
 Dans le cas de données déséquilibrées (le cas de notre jeu de données), il a été déduit que la Weighted Logistic Regression fonctionne mieux que la régression logistique classique.  
 
-# 5- Exploration des données:   
+# 5- Exploration des données:  
+Nous allons afficher des informations sur le DataFrame (le nombre total d'entrées, le nombre de colonnes, le nom des colonnes, le nombre de valeurs non nulles par colonne et le type de données de chaque colonne)  
+```
+data.info()  
+```
+RangeIndex: 284807 entries, 0 to 284806  
+Data columns (total 31 columns):  
+ #   Column  Non-Null Count   Dtype  
+---  ------  --------------   -----  
+ 0   Time    284807 non-null  float64  
+ 1   V1      284807 non-null  float64  
+ 2   V2      284807 non-null  float64  
+ 3   V3      284807 non-null  float64  
+ 4   V4      284807 non-null  float64  
+ 5   V5      284807 non-null  float64  
+ 6   V6      284807 non-null  float64  
+ 7   V7      284807 non-null  float64  
+ 8   V8      284807 non-null  float64  
+ 9   V9      284807 non-null  float64  
+ 10  V10     284807 non-null  float64   
+ 11  V11     284807 non-null  float64  
+ 12  V12     284807 non-null  float64  
+ 13  V13     284807 non-null  float64  
+ 14  V14     284807 non-null  float64  
+ 15  V15     284807 non-null  float64  
+ 16  V16     284807 non-null  float64  
+ 17  V17     284807 non-null  float64   
+ 18  V18     284807 non-null  float64   
+ 19  V19     284807 non-null  float64   
+ 20  V20     284807 non-null  float64   
+ 21  V21     284807 non-null  float64  
+ 22  V22     284807 non-null  float64  
+ 23  V23     284807 non-null  float64  
+ 24  V24     284807 non-null  float64  
+ 25  V25     284807 non-null  float64  
+ 26  V26     284807 non-null  float64  
+ 27  V27     284807 non-null  float64  
+ 28  V28     284807 non-null  float64  
+ 29  Amount  284807 non-null  float64  
+ 30  Class   284807 non-null  int64    
+dtypes: float64(30), int64(1)  
+memory usage: 67.4 MB  
+
+> À partir des informations fournies par data.info(), nous pouvons observer les caractéristiques suivantes de l'ensemble de données :  
+- Il y a un total de 284 807 entrées (lignes) dans le DataFrame.  
+- Il y a 31 colonnes au total, chaque colonne représentant une variable différente.  
+- Les colonnes vont de 0 à 30 et sont étiquetées avec leur nom (Time, V1, V2, ..., V28, Amount, Class).  
+- Toutes les colonnes ont 284 807 valeurs non nulles, ce qui signifie qu'il n'y a pas de valeurs manquantes dans l'ensemble de données.   
+- Les types de données des colonnes sont principalement des nombres à virgule flottante (float64) pour les variables continues, et une colonne est de type entier (int64), qui est la colonne de l'attribut (Class).  
+
+Nous allons examiner les fréquences des différentes valeurs (0,1) de l'attribut Class afin de détecter s'il y a un déséquilibre ou non  
+
+```
+print(data['Class'].value_counts())  
+```
+
+  Class
+0    284315
+1       492
+Name: count, dtype: int64  
+
+> On remarque que la valeur 0 est beaucoup plus fréquente que 1, cela indique un déséquilibre dans les valeurs de l'attribut Class
 ### Analyse statistique univariée    
 Dans cette partie, afin de comprendre les caractéristiques de chaque variable et sa distribution, nous allons calculer les statistiques descriptives pour chaque colonne du dataframe.  
 ```
