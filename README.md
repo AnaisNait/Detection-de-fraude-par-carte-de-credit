@@ -72,7 +72,7 @@ Dans le cas de données déséquilibrées (le cas de notre jeu de données), il 
 
 # 5- Exploration des données:   
 ### Analyse statistique univariée    
-         Time            V1            V2            V3            V4  \                              
+         Time            V1            V2               V3               V4  \                              
 count  284807.000000  2.848070e+05   2.848070e+05    2.848070e+05   2.848070e+05  
 mean   94813.859575   1.168375e-15   3.416908e-16   -1.379537e-15   2.074095e-15   
 std    47488.145955   1.958696e+00   1.651309e+00    1.516255e+00   1.415869e+00     
