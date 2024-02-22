@@ -73,7 +73,10 @@ Dans le cas de données déséquilibrées (le cas de notre jeu de données), il 
 # 5- Exploration des données:   
 ### Analyse statistique univariée    
 Dans cette partie, afin de comprendre les caractéristiques de chaque variable et sa distribution, nous allons calculer les statistiques descriptives pour chaque colonne du dataframe.  
-> statistiques_univariees = data.describe()  
+```
+statistiques_univariees = data.describe()  
+```
+ 
 Ces statistiques incluent la moyenne, l'écart-type, le minimum, le maximum, le premier quartile (25%), le deuxième quartile (médiane), et le troisième quartile (75%) pour chaque donnée.  
 
          Time            V1            V2               V3               V4  \                              
