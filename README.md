@@ -77,7 +77,7 @@ data.info()
 ```
 RangeIndex: 284807 entries, 0 to 284806  
 Data columns (total 31 columns):  
- #   Column  Non-Null Count   Dtype  
+     Column  Non-Null Count  Dtype  
 ---  ------  --------------   -----  
  0   Time    284807 non-null  float64  
  1   V1      284807 non-null  float64  
@@ -126,10 +126,10 @@ Nous allons examiner les fréquences des différentes valeurs (0,1) de l'attribu
 print(data['Class'].value_counts())  
 ```
 
-  Class
-0    284315
-1       492
-Name: count, dtype: int64  
+    Class  
+    0       284315  
+    1       492  
+    Name: count, dtype: int64  
 
 > On remarque que la valeur 0 est beaucoup plus fréquente que 1, cela indique un déséquilibre dans les valeurs de l'attribut Class
 ### Analyse statistique univariée    
