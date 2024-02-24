@@ -217,6 +217,8 @@ Le code ci-dessous, permet de dessiner un boxplot pour identifier les colonnes d
 ```
 data.boxplot(figsize=(20,3))
 ```
+![boxplot](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/4a907d2c-9103-46f1-b9c7-521ea19ab42f)
+
 > Il n'y a pas de points situés en dehors de la boite à moustaches. Tous les points sont à l'intérieur, donc il n'y a pas de valeurs aberrantes.    
 
 ### Standardisation 
@@ -239,7 +241,7 @@ plt.ylabel('Valeur de la variable')
 plt.legend()
 plt.show()
 ```
-![NP_après_standardisation](C:\Users\hp\Downloads\M1 data scale\S2\TER\Detection-de-fraude-par-carte-de-credit\Figures)
+
 Nous dessinons ci-dessous le nuage de points des variables après la standardisation  
 ```
 plt.figure(figsize=(10, 6))
