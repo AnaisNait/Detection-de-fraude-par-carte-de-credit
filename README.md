@@ -241,6 +241,7 @@ plt.ylabel('Valeur de la variable')
 plt.legend()
 plt.show()
 ```
+![NP_avant_standardisation](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/043fc586-3a59-4378-9332-3eddf9f9906a)
 
 Nous dessinons ci-dessous le nuage de points des variables après la standardisation  
 ```
@@ -253,6 +254,9 @@ plt.ylabel('Valeur de la variable standardisée')
 plt.legend()
 plt.show()
 ```
+
+![NP_après_standardisation](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/b03d7f7e-cfad-4654-9280-fc863cbacdd8)
+
 >En comparant les deux graphiques, on remarque que la dispersion des données a changé après la standardisation tel que les points dans le nuage de points standardisé sont plus regroupés 
 
 ### Bibliographie et références
