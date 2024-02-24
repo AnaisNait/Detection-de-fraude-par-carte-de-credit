@@ -113,11 +113,11 @@ data.info()
      memory usage: 67.4 MB  
 
 > À partir des informations fournies par data.info(), nous pouvons observer les caractéristiques suivantes de l'ensemble de données :  
-- Il y a un total de 284 807 entrées (lignes) dans le DataFrame.  
-- Il y a 31 colonnes au total, chaque colonne représentant une variable différente.  
-- Les colonnes vont de 0 à 30 et sont étiquetées avec leur nom (Time, V1, V2, ..., V28, Amount, Class).  
-- Toutes les colonnes ont 284 807 valeurs non nulles, ce qui signifie qu'il n'y a pas de valeurs manquantes dans l'ensemble de données.   
-- Les types de données des colonnes sont principalement des nombres à virgule flottante (float64) pour les variables continues, et une colonne est de type entier (int64), qui est la colonne de l'attribut (Class).  
+> - Il y a un total de 284 807 entrées (lignes) dans le DataFrame.  
+> - Il y a 31 colonnes au total, chaque colonne représentant une variable différente.  
+> - Les colonnes vont de 0 à 30 et sont étiquetées avec leur nom (Time, V1, V2, ..., V28, Amount, Class).  
+> - Toutes les colonnes ont 284 807 valeurs non nulles, ce qui signifie qu'il n'y a pas de valeurs manquantes dans l'ensemble de données.   
+> - Les types de données des colonnes sont principalement des nombres à virgule flottante (float64) pour les variables continues, et une colonne est de type entier (int64), qui est la colonne de l'attribut (Class).  
 
 Nous allons examiner les fréquences des différentes valeurs (0,1) de l'attribut Class afin de détecter s'il y a un déséquilibre ou non  
 
@@ -132,7 +132,7 @@ print(data['Class'].value_counts())
 
 > On remarque que la valeur 0 est beaucoup plus fréquente que 1, cela indique un déséquilibre dans les valeurs de l'attribut Class
 ### Analyse statistique univariée    
-Dans cette partie, afin de comprendre les caractéristiques de chaque variable et sa distribution, nous allons calculer les statistiques descriptives pour chaque colonne du dataframe.  
+Dans cette partie, afin de comprendre les caractéristiques de chaque variable et leur distribution, nous allons calculer les statistiques descriptives pour chaque colonne du dataframe.  
 ```
 statistiques_univariees = data.describe()  
 ```
@@ -207,10 +207,18 @@ Ces statistiques incluent la moyenne, l'écart-type, le minimum, le maximum, le 
     25%         0.000000    
     50%         0.000000    
     75%         0.000000    
-    max         1.000000    
+    max         1.000000  
+
+> Les données semblent être centrées autour de zéro pour de nombreuses variables, ce qui suggère qu'elles pourraient être normalisées ou standardisées. 
+> Les écarts-types indiquent des niveaux de dispersion différents pour chaque variable, certaines ayant une dispersion plus grande que d'autres.  
+ 
 ### Prétraitement des données  
-Le code ci-dessous, permet de dessiner un boxplot pour identifier les colonnes du Dataset qui contiennent des valeurs aberrantes.   
-Il n'y a pas de points situés en dehors de la boite à moustaches. Tous les points sont à l'intérieur, donc il n'y a pas de valeurs aberrantes.  
+Le code ci-dessous, permet de dessiner un boxplot pour identifier les colonnes du Dataset qui contiennent des valeurs aberrantes.    
+```
+data.boxplot(figsize=(20,3))
+```
+> Il n'y a pas de points situés en dehors de la boite à moustaches. Tous les points sont à l'intérieur, donc il n'y a pas de valeurs aberrantes.    
+
 ### Standardisation  
 Dans cet exemple, data_scaled[:, 0] et data_scaled[:, 1] représentent les deux premières colonnes standardisées de vos données. Vous devriez ajuster ces indices en fonction des colonnes que vous souhaitez visualiser.
 
