@@ -217,7 +217,7 @@ Le code ci-dessous, permet de dessiner un boxplot pour identifier les colonnes d
 ```
 data.boxplot(figsize=(20,3))
 ```
-![boxplot](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/4a907d2c-9103-46f1-b9c7-521ea19ab42f)
+[![boxplot](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/4a907d2c-9103-46f1-b9c7-521ea19ab42f)](#)
 
 > Il n'y a pas de points situés en dehors de la boite à moustaches. Tous les points sont à l'intérieur, donc il n'y a pas de valeurs aberrantes.    
 
@@ -241,7 +241,7 @@ plt.ylabel('Valeur de la variable')
 plt.legend()
 plt.show()
 ```
-![NP_avant_standardisation](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/043fc586-3a59-4378-9332-3eddf9f9906a)
+[![NP_avant_standardisation](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/043fc586-3a59-4378-9332-3eddf9f9906a)](#)
 
 Nous dessinons ci-dessous le nuage de points des variables après la standardisation  
 ```
@@ -255,9 +255,10 @@ plt.legend()
 plt.show()
 ```
 
-![NP_après_standardisation](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/b03d7f7e-cfad-4654-9280-fc863cbacdd8)
+[![NP_après_standardisation](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/b03d7f7e-cfad-4654-9280-fc863cbacdd8)](#)
 
->En comparant les deux graphiques, on remarque que la dispersion des données a changé après la standardisation tel que les points dans le nuage de points standardisé sont plus regroupés 
+> On remarque que les données sont centrées autour de zéro après la standardisation car les points sont distribués de manière symétrique par rapport à l'axe y=0.
+> En comparant les deux graphiques, on remarque que la dispersion des données a changé après la standardisation tel que les points dans le nuage de points standardisé sont plus regroupés 
 
 ### Bibliographie et références
 https://www.kaggle.com/code/laurajezequel/credit-card-fraud-detection  
