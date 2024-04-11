@@ -259,7 +259,55 @@ plt.show()
 
 > On remarque que les données sont centrées autour de zéro après la standardisation car les points sont distribués de manière symétrique par rapport à l'axe y=0.
 > En comparant les deux graphiques, on remarque que la dispersion des données a changé après la standardisation tel que les points dans le nuage de points standardisé sont plus regroupés 
+ 
 
+# 6- Modèle de prédiction:  
+### Division des données
+On isole la variable classe y afin de s'assurer que le modèle ne « voit » pas les valeurs de la variable cible lors de l'apprentissage
+```
+y = data.Class
+```
+On divise les données comme suit: 
+- X_train : Ensemble d'apprentissage pour les variables explicatives
+- X_test : Ensemble de test pour les variables explicatives
+- y_train : Ensemble d'apprentissage pour la variable cible
+- y_test : Ensemble de test pour la variable cible
+```
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
+```
+### Isolation Forest  
+Créer le modèle de détection d'anomalies  
+```
+model = IsolationForest()  
+```  
+Entrainer le modèle sur l'ensemble d'apprentissage  
+```
+model.fit(X_train)    
+```
+Prédire sur l'ensemble de test   
+```
+y_pred = model.predict(X_test)   
+```
+ Évaluer les performances du modèle
+```
+print(classification_report(y_test, y_pred)) 
+```
+
+    Class
+0    284315
+1       492
+Name: count, dtype: int64
+              precision    recall  f1-score   support
+
+          -1       0.00      0.00      0.00         0
+           0       0.00      0.00      0.00     56864
+           1       0.00      0.17      0.00        98
+
+    accuracy                           0.00     56962
+   macro avg       0.00      0.06      0.00     56962
+weighted avg       0.00      0.00      0.00     56962
+
+[-1  1  1 ...  1  1 -1]
 ### Bibliographie et références
 https://www.kaggle.com/code/laurajezequel/credit-card-fraud-detection  
 https://www.kaggle.com/code/imanelmountasser/d-tection-de-fraude/notebook  
