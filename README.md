@@ -294,20 +294,20 @@ print(classification_report(y_test, y_pred))
 ```
 
     Class
-0    284315
-1       492
-Name: count, dtype: int64
-              precision    recall  f1-score   support
+    0    284315
+    1       492
+    Name: count, dtype: int64
+        precision    recall  f1-score   support
 
-          -1       0.00      0.00      0.00         0
-           0       0.00      0.00      0.00     56864
-           1       0.00      0.17      0.00        98
+        -1      0.00      0.00       0.00        0
+        0       0.00      0.00      0.00     56864
+        1       0.00      0.17      0.00        98
 
-    accuracy                           0.00     56962
-   macro avg       0.00      0.06      0.00     56962
-weighted avg       0.00      0.00      0.00     56962
+    accuracy                            0.00     56962
+    macro avg       0.00      0.06      0.00     56962
+    weighted avg    0.00      0.00      0.00     56962
 
-[-1  1  1 ...  1  1 -1]
+    [-1  1  1 ...  1  1 -1]
 ### Bibliographie et références
 https://www.kaggle.com/code/laurajezequel/credit-card-fraud-detection  
 https://www.kaggle.com/code/imanelmountasser/d-tection-de-fraude/notebook  
