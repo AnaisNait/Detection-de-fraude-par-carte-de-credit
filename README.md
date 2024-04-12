@@ -316,7 +316,38 @@ print(classification_report(y_test, y_pred))
 * Rappel (Recall) : Le rappel pour la classe 0 est de 0.96, ce qui signifie que le modèle a correctement identifié la plupart des transactions normales. Pour la classe 1, le rappel est de 0.83, ce qui indique que le modèle a réussi à identifier une proportion importante des transactions frauduleuses, mais pas toutes.    
 * F1-score : Le F1-score est une moyenne entre la précision et le rappel. Pour la classe 0, le F1-score est élevé (0.98), tandis que pour la classe 1, il est très bas (0.07), ce qui est cohérent avec les autres mesures.  
 * Exactitude (Accuracy) : L'exactitude globale du modèle est de 0.96, ce qui semble élevé.
-* Macro et weighted avg : Ces moyennes donnent une vue d'ensemble des performances moyennes du modèle. Le F1-score macro est de 0.53, ce qui est relativement faible, indiquant que le modèle ne performe pas aussi bien sur l'ensemble des classes.
+* Macro et weighted avg : Ces moyennes donnent une vue d'ensemble des performances moyennes du modèle. Le F1-score macro est de 0.53, ce qui est relativement faible, indiquant que le modèle ne performe pas aussi bien sur l'ensemble des classes.  
+
+bien que le modèle semble performant pour détecter les transactions normales, il a du mal à identifier les transactions frauduleuses. On va donc essayer d'améliorer les performances du modèle pour donner de plus bons résultats.  
+
+### Reéchantillonnage  
+Le but est d'augmenter le nombre d'échantillons de la classe minoritaire (fraudes) pour équilibrer les classes. Pour ça on utilise la méthode SMOTE pour créer des échantillons synthétiques de la classe minoritaire.
+```
+smote = SMOTE(random_state=42)
+X_resampled, y_resampled = smote.fit_resample(X_train, y_train)
+``` 
+Puis pn re-applique le modèle :  
+``` 
+model.fit(X_resampled, y_resampled)
+y_pred = model.predict(X_test)
+y_pred[y_pred == 1] = 0  # Prédiction correcte (normal)
+y_pred[y_pred == -1] = 1  # Anomalie détectée
+print(classification_report(y_test, y_pred))
+```
+```  
+    Class
+    0    284315
+    1       492
+    Name: count, dtype: int64
+            precision    recall  f1-score   support
+
+        0       1.00      0.98      0.99     56864
+        1       0.03      0.28      0.05        98
+
+    accuracy                        0.98     56962
+   macro avg    0.51      0.63      0.52     56962
+weighted avg    1.00      0.98      0.99     56962
+``` 
 
 
 ### Bibliographie et références
