@@ -308,6 +308,19 @@ print(classification_report(y_test, y_pred))
     weighted avg    0.00      0.00      0.00     56962
 
     [-1  1  1 ...  1  1 -1]
+
+On remarque qu'en utilisant IsolationForest, l'amgorithme divise les données en deux classes : 1 pour les données normales et -1 pour les anomalies. Dans le contexte de votre problème de détection de fraude, cela peut créer une confusion avec vos classes 0 et 1.    
+Notre problème est un problème de classification binaire auquel ne correspond pas cet algorithme de détection d'anomalies 
+D'ailleurs on constante que les résultats fournis par isolation forest ne sont pas bons, tels que :   
+
+* Précision : Il s'agit de la proportion d'observations positives prédites par le modèle qui sont réellement positives. Dans ce cas, la précision pour la classe 0 est de 0,00, ce qui indique que le modèle ne prédit pas correctement les observations de la classe 0.  
+* Rappel (Sensibilité) : Il s'agit de la proportion d'observations positives réelles qui sont correctement prédites comme positives. Le rappel pour la classe 1 est de 0,17, ce qui signifie que seulement 17% des fraudes réelles sont détectées par le modèle.  
+* F1-score : C'est une mesure de la précision et du rappel, calculée comme la moyenne harmonique des deux. Le F1-score pour la classe 1 est de 0,00, ce qui est très faible.  
+* Support : Il s'agit du nombre d'occurrences de chaque classe dans les données de test. Dans notre cas, la classe 0 a un support de 56 864 et la classe 1 a un support de 98.  
+* Accuracy (Exactitude) : C'est la proportion d'observations correctement prédites par le modèle. L'exactitude est de 0,00, ce qui indique que le modèle ne prédit pas correctement les étiquettes des données de test.  
+* Macro Avg : Il s'agit de la moyenne des métriques (précision, rappel, F1-score) calculée pour chaque classe sans prendre en compte le déséquilibre de classe. Dans votre cas, les métriques macro-avg sont également très faibles.  
+* Weighted Avg : Il s'agit de la moyenne des métriques (précision, rappel, F1-score) calculée pour chaque classe en tenant compte du déséquilibre de classe. Comme les métriques pour chaque classe sont très faibles, le weighted avg est également très faible. 
+
 ### Bibliographie et références
 https://www.kaggle.com/code/laurajezequel/credit-card-fraud-detection  
 https://www.kaggle.com/code/imanelmountasser/d-tection-de-fraude/notebook  
