@@ -261,7 +261,7 @@ plt.show()
 > En comparant les deux graphiques, on remarque que la dispersion des données a changé après la standardisation tel que les points dans le nuage de points standardisé sont plus regroupés 
  
 
-# 6- Modèle de prédiction:  
+# 6- Modèles de prédiction:  
 ### Division des données
 On isole la variable classe y afin de s'assurer que le modèle ne « voit » pas les valeurs de la variable cible lors de l'apprentissage
 ```
@@ -286,8 +286,13 @@ model.fit(X_train)
 ```
 Prédire sur l'ensemble de test   
 ```
-y_pred = model.predict(X_test)   
+y_pred = model.predict(X_test)  
+y_pred[y_pred == 1] = 0  # Prédiction correcte
+y_pred[y_pred == -1] = 1  # Anomalie détectée
+
 ```
+L'algorithme IsolationForest a le principe de diviser les données en deux classes : 1 pour les données normales et -1 pour les anomalies. Dans le contexte de notre problème de détection de fraude, nous avons deux classes 0 et 1. Pour éviter les confusions, on transforme les prédictions pour qu'elles correspondent à la classe réelle (0 pour normal, 1 pour anomalie)
+
  Évaluer les performances du modèle
 ```
 print(classification_report(y_test, y_pred)) 
@@ -297,29 +302,22 @@ print(classification_report(y_test, y_pred))
     0    284315
     1       492
     Name: count, dtype: int64
-        precision    recall  f1-score   support
+                precision  recall  f1-score   support
 
-        -1      0.00      0.00       0.00        0
-        0       0.00      0.00      0.00     56864
-        1       0.00      0.17      0.00        98
+           0     1.00       0.96      0.98     56864
+           1     0.04       0.83      0.07     98
 
-    accuracy                            0.00     56962
-    macro avg       0.00      0.06      0.00     56962
-    weighted avg    0.00      0.00      0.00     56962
+    accuracy                              0.96     56962
+    macro avg        0.52       0.90      0.53     56962
+    weighted avg     1.00       0.96      0.98     56962
 
-    [-1  1  1 ...  1  1 -1]
 
-On remarque qu'en utilisant IsolationForest, l'algorithme divise les données en deux classes : 1 pour les données normales et -1 pour les anomalies. Dans le contexte de notre problème de détection de fraude, cela peut créer une confusion avec vos classes 0 et 1. La classe -1 s'ajoute alors qu'elle ne joue aucun rôle dans notre dataset.      
-On déduit donc que notre problème est un problème de classification binaire auquel ne correspond pas cet algorithme de détection d'anomalies.  
-D'ailleurs on constante que les résultats fournis par isolation forest ne sont pas bons, tels que :   
+* Précision: La précision pour la classe 0 est très élevée (1.00), ce qui indique que presque toutes les transactions identifiées comme normales le sont réellement. En revanche, la précision pour la classe 1 est très faible (0.04).   
+* Rappel (Recall) : Le rappel pour la classe 0 est de 0.96, ce qui signifie que le modèle a correctement identifié la plupart des transactions normales. Pour la classe 1, le rappel est de 0.83, ce qui indique que le modèle a réussi à identifier une proportion importante des transactions frauduleuses, mais pas toutes.    
+* F1-score : Le F1-score est une moyenne entre la précision et le rappel. Pour la classe 0, le F1-score est élevé (0.98), tandis que pour la classe 1, il est très bas (0.07), ce qui est cohérent avec les autres mesures.  
+* Exactitude (Accuracy) : L'exactitude globale du modèle est de 0.96, ce qui semble élevé.
+* Macro et weighted avg : Ces moyennes donnent une vue d'ensemble des performances moyennes du modèle. Le F1-score macro est de 0.53, ce qui est relativement faible, indiquant que le modèle ne performe pas aussi bien sur l'ensemble des classes.
 
-* Précision : Il s'agit de la proportion d'observations positives prédites par le modèle qui sont réellement positives. Dans ce cas, la précision pour la classe 0 est de 0,00, ce qui indique que le modèle ne prédit pas correctement les observations de la classe 0.  
-* Rappel (Sensibilité) : Il s'agit de la proportion d'observations positives réelles qui sont correctement prédites comme positives. Le rappel pour la classe 1 est de 0,17, ce qui signifie que seulement 17% des fraudes réelles sont détectées par le modèle.  
-* F1-score : C'est une mesure de la précision et du rappel, calculée comme la moyenne harmonique des deux. Le F1-score pour la classe 1 est de 0,00, ce qui est très faible.  
-* Support : Il s'agit du nombre d'occurrences de chaque classe dans les données de test. Dans notre cas, la classe 0 a un support de 56 864 et la classe 1 a un support de 98.  
-* Accuracy (Exactitude) : C'est la proportion d'observations correctement prédites par le modèle. L'exactitude est de 0,00, ce qui indique que le modèle ne prédit pas correctement les étiquettes des données de test.  
-* Macro Avg : Il s'agit de la moyenne des métriques (précision, rappel, F1-score) calculée pour chaque classe sans prendre en compte le déséquilibre de classe. Dans votre cas, les métriques macro-avg sont également très faibles.  
-* Weighted Avg : Il s'agit de la moyenne des métriques (précision, rappel, F1-score) calculée pour chaque classe en tenant compte du déséquilibre de classe. Comme les métriques pour chaque classe sont très faibles, le weighted avg est également très faible. 
 
 ### Bibliographie et références
 https://www.kaggle.com/code/laurajezequel/credit-card-fraud-detection  
