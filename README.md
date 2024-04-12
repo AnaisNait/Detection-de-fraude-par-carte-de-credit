@@ -320,13 +320,13 @@ print(classification_report(y_test, y_pred))
 
 bien que le modèle semble performant pour détecter les transactions normales, il a du mal à identifier les transactions frauduleuses. On va donc essayer d'améliorer les performances du modèle pour donner de plus bons résultats.  
 
-### Reéchantillonnage  
+### Suréchantillonnage  
 Le but est d'augmenter le nombre d'échantillons de la classe minoritaire (fraudes) pour équilibrer les classes. Pour ça on utilise la méthode SMOTE pour créer des échantillons synthétiques de la classe minoritaire.
 ```
 smote = SMOTE(random_state=42)
 X_resampled, y_resampled = smote.fit_resample(X_train, y_train)
 ``` 
-Puis pn re-applique le modèle :  
+Puis on re-applique le modèle :  
 ``` 
 model.fit(X_resampled, y_resampled)
 y_pred = model.predict(X_test)
@@ -348,6 +348,9 @@ print(classification_report(y_test, y_pred))
    macro avg    0.51      0.63      0.52     56962
 weighted avg    1.00      0.98      0.99     56962
 ``` 
+On remarque une amélioration par rapport aux résultats précédents. en particulier en ce qui concerne le rappel (recall) pour la classe 1.  
+
+### 
 
 
 ### Bibliographie et références
