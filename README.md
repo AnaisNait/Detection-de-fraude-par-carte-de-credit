@@ -309,8 +309,8 @@ print(classification_report(y_test, y_pred))
 
     [-1  1  1 ...  1  1 -1]
 
-On remarque qu'en utilisant IsolationForest, l'amgorithme divise les données en deux classes : 1 pour les données normales et -1 pour les anomalies. Dans le contexte de votre problème de détection de fraude, cela peut créer une confusion avec vos classes 0 et 1.    
-Notre problème est un problème de classification binaire auquel ne correspond pas cet algorithme de détection d'anomalies 
+On remarque qu'en utilisant IsolationForest, l'algorithme divise les données en deux classes : 1 pour les données normales et -1 pour les anomalies. Dans le contexte de notre problème de détection de fraude, cela peut créer une confusion avec vos classes 0 et 1. La classe -1 s'ajoute alors qu'elle ne joue aucun rôle dans notre dataset.      
+On déduit donc que notre problème est un problème de classification binaire auquel ne correspond pas cet algorithme de détection d'anomalies.  
 D'ailleurs on constante que les résultats fournis par isolation forest ne sont pas bons, tels que :   
 
 * Précision : Il s'agit de la proportion d'observations positives prédites par le modèle qui sont réellement positives. Dans ce cas, la précision pour la classe 0 est de 0,00, ce qui indique que le modèle ne prédit pas correctement les observations de la classe 0.  
