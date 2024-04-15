@@ -350,9 +350,6 @@ weighted avg    1.00      0.98      0.99     56962
 ``` 
 On remarque une amélioration par rapport aux résultats précédents. en particulier en ce qui concerne le rappel (recall) pour la classe 1.  
 
-### 
-
-
 ### Bibliographie et références
 https://www.kaggle.com/code/laurajezequel/credit-card-fraud-detection  
 https://www.kaggle.com/code/imanelmountasser/d-tection-de-fraude/notebook  
