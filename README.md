@@ -265,6 +265,7 @@ plt.show()
 ### Division des données
 On isole la variable classe y afin de s'assurer que le modèle ne « voit » pas les valeurs de la variable cible lors de l'apprentissage
 ```
+from sklearn.model_selection import train_test_split
 y = data.Class
 ```
 On divise les données comme suit: 
@@ -278,6 +279,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 ### Isolation Forest  
 Créer le modèle de détection d'anomalies  
 ```
+from sklearn.ensemble import IsolationForest
 model = IsolationForest()  
 ```  
 Entrainer le modèle sur l'ensemble d'apprentissage  
@@ -295,6 +297,7 @@ L'algorithme IsolationForest a le principe de diviser les données en deux class
 
  Évaluer les performances du modèle
 ```
+from sklearn.metrics import classification_report
 print(classification_report(y_test, y_pred)) 
 ```
 
@@ -313,21 +316,20 @@ print(classification_report(y_test, y_pred))
 
 
 * Précision: La précision pour la classe 0 est très élevée (1.00), ce qui indique que presque toutes les transactions identifiées comme normales le sont réellement. En revanche, la précision pour la classe 1 est très faible (0.04).   
-* Rappel (Recall) : Le rappel pour la classe 0 est de 0.96, ce qui signifie que le modèle a correctement identifié la plupart des transactions normales. Pour la classe 1, le rappel est de 0.83, ce qui indique que le modèle a réussi à identifier une proportion importante des transactions frauduleuses, mais pas toutes.    
-* F1-score : Le F1-score est une moyenne entre la précision et le rappel. Pour la classe 0, le F1-score est élevé (0.98), tandis que pour la classe 1, il est très bas (0.07), ce qui est cohérent avec les autres mesures.  
-* Exactitude (Accuracy) : L'exactitude globale du modèle est de 0.96, ce qui semble élevé.
-* Macro et weighted avg : Ces moyennes donnent une vue d'ensemble des performances moyennes du modèle. Le F1-score macro est de 0.53, ce qui est relativement faible, indiquant que le modèle ne performe pas aussi bien sur l'ensemble des classes.  
+* Rappel (Recall) : Le rappel pour la classe 0 est de 0.96, ce qui signifie que le modèle a correctement identifié la plupart des transactions normales. Pour la classe 1, le rappel est de 0.83, ce qui indique que le modèle a réussi à identifier une proportion importante des transactions frauduleuses.    
 
 bien que le modèle semble performant pour détecter les transactions normales, il a du mal à identifier les transactions frauduleuses. On va donc essayer d'améliorer les performances du modèle pour donner de plus bons résultats.  
 
 ### Suréchantillonnage  
 Le but est d'augmenter le nombre d'échantillons de la classe minoritaire (fraudes) pour équilibrer les classes. Pour ça on utilise la méthode SMOTE pour créer des échantillons synthétiques de la classe minoritaire.
 ```
+from imblearn.over_sampling import SMOTE
 smote = SMOTE(random_state=42)
 X_resampled, y_resampled = smote.fit_resample(X_train, y_train)
 ``` 
 Puis on re-applique le modèle :  
 ``` 
+
 model.fit(X_resampled, y_resampled)
 y_pred = model.predict(X_test)
 y_pred[y_pred == 1] = 0  # Prédiction correcte (normal)
@@ -348,7 +350,39 @@ print(classification_report(y_test, y_pred))
    macro avg    0.51      0.63      0.52     56962
 weighted avg    1.00      0.98      0.99     56962
 ``` 
-On remarque une amélioration par rapport aux résultats précédents. en particulier en ce qui concerne le rappel (recall) pour la classe 1.  
+On remarque une légère amélioration par rapport aux résultats précédents. 
+
+### SVM 
+On fait crée le modèle, puis on l'entraine sur sur les données d'entraînement pour enfin faire des prédictions sur les données de test comme suit: 
+```
+from sklearn.svm import SVC
+svm_model = SVC(kernel='linear')
+svm_model.fit(X_train, y_train)
+y_pred_svm = svm_model.predict(X_test)
+```
+Affichons les résultats du modèle:
+```
+print(classification_report(y_test, y_pred_svm))
+```
+```
+    Class
+    0    284315
+    1       492
+    Name: count, dtype: int64
+            precision    recall  f1-score   support
+
+        0     1.00      1.00      1.00     56864
+        1     0.60      0.30      0.40     98
+
+    accuracy                      1.00     56962
+    macro avg    0.80   0.65      0.70     56962
+    weighted avg 1.00   1.00      1.00     56962
+```
+Pour la classe 0 (transactions non frauduleuses), le modèle a une précision, un rappel et un score F1 de 1. Cela signifie que le modèle identifie correctement toutes les transactions non frauduleuses et ne génère pas de faux positifs.
+
+Pour la classe 1 (transactions frauduleuses), la précision est de 0.60, le rappel de 0.30 et le score F1 de 0.40. Cela indique que le modèle a du mal à identifier toutes les transactions frauduleuses. Il identfie donc que 40% des transactions frauduleuses.
+
+En comparant ces résultats avec ceux de l'Isolation Forest, il semble que le SVM ait de meilleures performances. 
 
 ### Bibliographie et références
 https://www.kaggle.com/code/laurajezequel/credit-card-fraud-detection  
