@@ -384,6 +384,15 @@ Pour la classe 1 (transactions frauduleuses), la précision est de 0.60, le rapp
 
 En comparant ces résultats avec ceux de l'Isolation Forest, il semble que le SVM ait de meilleures performances. 
 
+# 7- Conclusion
+L'algorithme de détection d'anomalies  a montré une performance plutôt médiocre pour la détection de fraudes dans ce dataset. Bien qu'il ait réussi à détecter la majorité des transactions non frauduleuses avec une précision élevée (98%), il a eu du mal à identifier les transactions frauduleuses, comme en témoigne le rappel très faible pour cette classe (83%). 
+Le SVM a affiché une meilleure performance globale par rapport à l'Isolation Forest. Il a réussi à détecter les transactions non frauduleuses avec une précision parfaite de 1,00 et un rappel de 0,96. Cependant, comme l'Isolation Forest, il a eu du mal à identifier les transactions frauduleuses, avec une précision de seulement 0,04 et un rappel de 0,83.   
+
+
+
+
+
+
 ### Bibliographie et références
 https://www.kaggle.com/code/laurajezequel/credit-card-fraud-detection  
 https://www.kaggle.com/code/imanelmountasser/d-tection-de-fraude/notebook  
