@@ -300,11 +300,6 @@ L'algorithme IsolationForest a le principe de diviser les données en deux class
 from sklearn.metrics import classification_report
 print(classification_report(y_test, y_pred)) 
 ```
-
-    Class
-    0    284315
-    1       492
-    Name: count, dtype: int64
                 precision  recall  f1-score   support
 
            0     1.00       0.96      0.98     56864
@@ -337,12 +332,6 @@ y_pred[y_pred == -1] = 1  # Anomalie détectée
 print(classification_report(y_test, y_pred))
 ```
 ```  
-    Class
-    0    284315
-    1       492
-    Name: count, dtype: int64
-            precision    recall  f1-score   support
-
         0       1.00      0.98      0.99     56864
         1       0.03      0.28      0.05        98
 
@@ -365,10 +354,6 @@ Affichons les résultats du modèle:
 print(classification_report(y_test, y_pred_svm))
 ```
 ```
-    Class
-    0    284315
-    1       492
-    Name: count, dtype: int64
             precision    recall  f1-score   support
 
         0     1.00      1.00      1.00     56864
@@ -385,10 +370,9 @@ Pour la classe 1 (transactions frauduleuses), la précision est de 0.60, le rapp
 En comparant ces résultats avec ceux de l'Isolation Forest, il semble que le SVM ait de meilleures performances. 
 
 # 7- Conclusion
-L'algorithme de détection d'anomalies  a montré une performance plutôt médiocre pour la détection de fraudes dans ce dataset. Bien qu'il ait réussi à détecter la majorité des transactions non frauduleuses avec une précision élevée (98%), il a eu du mal à identifier les transactions frauduleuses, comme en témoigne le rappel très faible pour cette classe (83%). 
-Le SVM a affiché une meilleure performance globale par rapport à l'Isolation Forest. Il a réussi à détecter les transactions non frauduleuses avec une précision parfaite de 1,00 et un rappel de 0,96. Cependant, comme l'Isolation Forest, il a eu du mal à identifier les transactions frauduleuses, avec une précision de seulement 0,04 et un rappel de 0,83.   
-
-
+L'algorithme de détection d'anomalies  a montré une performance plutôt médiocre pour la détection de fraudes dans ce dataset. Bien qu'il ait réussi à détecter la majorité des transactions non frauduleuses avec une précision élevée (98%), il a eu du mal à identifier les transactions frauduleuses, comme en témoigne le rappel très faible pour cette classe (83%).   
+Le SVM a affiché une meilleure performance globale par rapport à l'Isolation Forest. Il a réussi à détecter les transactions non frauduleuses avec une précision parfaite de 1,00 et un rappel de 0,96. Cependant, comme l'Isolation Forest, il a eu du mal à identifier les transactions frauduleuses, avec une précision de seulement 0,04 et un rappel de 0,83.     
+En conclusion, notre problème peut être résolu grâce à plusieurs modèles qui possèdent tous des précsions équivalentes: Isolation Forest et SVM. Malgrè le deséquilibre dans notre dataset, les résultats sont bons. En revanche, la méthode de sur-échantillonage n'améliore pas la performance des algorithmes.
 
 
 
@@ -397,6 +381,8 @@ Le SVM a affiché une meilleure performance globale par rapport à l'Isolation F
 https://www.kaggle.com/code/laurajezequel/credit-card-fraud-detection  
 https://www.kaggle.com/code/imanelmountasser/d-tection-de-fraude/notebook  
 https://www.kaggle.com/code/julienchoukroun99/d-tection-de-fraude-de-carte-bancaire/notebook
+https://www.youtube.com/watch?v=FTtzd31IAOw&t=1206s
+
 
 
 
