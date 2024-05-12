@@ -20,9 +20,8 @@ Cependant, cette approche était limitée par la vitesse de traitement et la sub
 L'avènement des transactions électroniques a introduit de nouveaux défis. Les premières formes de fraude par cartes de crédit ont émergé.  
 Les banques ont commencé à utiliser des méthodes statistiques pour détecter des modèles inhabituels dans les transactions.  
 ### Années 1960-1970 :  
-L'essor des ordinateurs a ouvert la voie à automatiser de nombreuses opérations. Cela a permis d'améliorer l'efficacité, mais a également créé de nouvelles vulnérabilités à exploiter.   
 Les banques ont commencé à utiliser des systèmes de détection automatisés pour surveiller les activités financières suspectes. Cela a souvent été basé sur des règles prédéfinies et des modèles statistiques.  
-les modèles basés sur la régression logistique étaient parmi les approches les plus utilisées pour identifier les transactions potentiellement frauduleuses. Ces modèles pouvaient prendre en compte divers paramètres, tels que le montant, l'emplacement, l'heure, etc., et attribuer des scores de probabilité à ces transactions. Cependant, ils étaient limités dans leur capacité à capturer des schémas de fraude complexes, en particulier lorsque les relations entre les variables sont non linéaires.   
+Les modèles basés sur la régression logistique étaient parmi les approches les plus utilisées pour identifier les transactions potentiellement frauduleuses. Ces modèles pouvaient prendre en compte divers paramètres, tels que le montant, l'emplacement, l'heure, etc., et attribuer des scores de probabilité à ces transactions. Cependant, ils étaient limités dans leur capacité à capturer des schémas de fraude complexes, en particulier lorsque les relations entre les variables sont non linéaires.   
 ### Années 1990 à aujourd'hui :    
 L'avènement d'Internet a conduit à des fraudes en ligne, telles que le vol d'identité et la fraude par phishing.
 Les banques ont développé des outils de détection avancés basés sur l'intelligence artificielle et l'apprentissage automatique pour détecter les schémas frauduleux.  
