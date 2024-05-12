@@ -30,7 +30,7 @@ Les banques ont développé des outils de détection avancés basés sur l'intel
 * Machines à Vecteurs de Support (SVM):  
 Elles permettent de créer des frontières de décision non linéaires. Elles sont efficaces pour traiter des ensembles de données où les classes ne sont pas linéairement séparables.
 Les SVM peuvent être utilisées pour séparer les transactions frauduleuses des transactions légitimes en construisant des hyperplans dans un espace multidimensionnel séparant les transactions en deux classes.  
-* Random Forest :
+* Random Forest :  
 Fonctionne en construisant plusieurs arbres de décision lors de l'entraînement et en les combinant pour obtenir une prédiction plus robuste.
 * Clustering:   
 Les méthodes de clustering sont utilisées pour identifier des groupes de transactions similaires et détecter des anomalies parmi ces groupes.  
