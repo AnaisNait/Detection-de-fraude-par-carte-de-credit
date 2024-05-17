@@ -374,14 +374,23 @@ En comparant ces résultats avec ceux de l'Isolation Forest, il semble que le SV
 |------------------------|--------------------|-----------------|--------------------|-----------------|
 | Random Forest          | 1.00               | 1.00            | 0.93               | 0.76            |
 | Détection d'anomalies  | 1.00               | 0.98            | 0.03               | 0.28            |
-| SVM                    | 1.00               | 1.00            | 0.60               | 0.30            |
-| Arbres de décision     | -                  | -               | -                  | -               |  
+| SVM                    | 1.00               | 1.00            | 0.60               | 0.30            |  
+
+* * Random Forest :  
+- Offre une excellente précision et rappel pour la classe 0.  
+- Offre une très bonne précision mais un rappel moyen pour la classe 1, ce qui signifie qu'il est bon pour détecter les fraudes, mais il manque encore quelques transactions frauduleuses.   
+  
+* * Détection d'anomalies :  
+- Offre une précision élevée pour la classe 0, mais son rappel pour la classe 1 est très faible, ce qui signifie qu'il détecte très peu de fraudes (beaucoup de faux négatifs).  
+  
+* * SVM :  
+- Offre une excellente précision et rappel pour la classe 0.
+La précision et le rappel pour la classe 1 sont inférieurs à ceux de Random Forest, mais meilleurs que ceux de la détection d'anomalies.  
 
 [![Comparaison](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/8787bda5-569b-4198-84ca-df27263987df)](#)
 
 Random Forest et SVM montrent des performances solides pour la classe majoritaire (classe 0) et de bonnes performances pour la classe minoritaire (classe 1), avec Random Forest offrant un meilleur rappel pour la classe 1.  
 Détection d'anomalies est moins efficace pour détecter les fraudes, avec un rappel et une précision faibles pour la classe 1.  
-Arbres de décision offrent une précision globale élevée, mais il est probable qu'ils sous-détectent la classe minoritaire en raison de l'équilibre des classes.
 
 # 8- Conclusion
 L'algorithme de détection d'anomalies  a montré une performance plutôt médiocre pour la détection de fraudes dans ce dataset. Bien qu'il ait réussi à détecter la majorité des transactions non frauduleuses avec une précision élevée (98%), il a eu du mal à identifier les transactions frauduleuses, comme en témoigne le rappel très faible pour cette classe (83%).   
