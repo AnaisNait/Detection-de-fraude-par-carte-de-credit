@@ -367,9 +367,13 @@ Pour la classe 0 (transactions non frauduleuses), le modèle a une précision, u
 
 Pour la classe 1 (transactions frauduleuses), la précision est de 0.60, le rappel de 0.30 et le score F1 de 0.40. Cela indique que le modèle a du mal à identifier toutes les transactions frauduleuses. Il identfie donc que 40% des transactions frauduleuses.
 
-En comparant ces résultats avec ceux de l'Isolation Forest, il semble que le SVM ait de meilleures performances. 
+En comparant ces résultats avec ceux de l'Isolation Forest, il semble que le SVM ait de meilleures performances.   
 
-# 7- Conclusion
+# 7- Comparaison des résultats 
+[![ComparaisonDesResultats](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/main/Comparaison.png)](#)
+
+
+# 8- Conclusion
 L'algorithme de détection d'anomalies  a montré une performance plutôt médiocre pour la détection de fraudes dans ce dataset. Bien qu'il ait réussi à détecter la majorité des transactions non frauduleuses avec une précision élevée (98%), il a eu du mal à identifier les transactions frauduleuses, comme en témoigne le rappel très faible pour cette classe (83%).   
 Le SVM a affiché une meilleure performance globale par rapport à l'Isolation Forest. Il a réussi à détecter les transactions non frauduleuses avec une précision parfaite de 1,00 et un rappel de 0,96. Cependant, comme l'Isolation Forest, il a eu du mal à identifier les transactions frauduleuses, avec une précision de seulement 0,04 et un rappel de 0,83.     
 En conclusion, notre problème peut être résolu grâce à plusieurs modèles qui possèdent tous des précsions équivalentes: Isolation Forest et SVM. Malgrè le deséquilibre dans notre dataset, les résultats sont bons. En revanche, la méthode de sur-échantillonage n'améliore pas la performance des algorithmes.
