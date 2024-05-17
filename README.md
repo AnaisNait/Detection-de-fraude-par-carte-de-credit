@@ -376,14 +376,14 @@ En comparant ces résultats avec ceux de l'Isolation Forest, il semble que le SV
 | Détection d'anomalies  | 1.00               | 0.98            | 0.03               | 0.28            |
 | SVM                    | 1.00               | 1.00            | 0.60               | 0.30            |  
 
-* * Random Forest :  
+_Random Forest :_  
 - Offre une excellente précision et rappel pour la classe 0.  
 - Offre une très bonne précision mais un rappel moyen pour la classe 1, ce qui signifie qu'il est bon pour détecter les fraudes, mais il manque encore quelques transactions frauduleuses.   
   
-* * Détection d'anomalies :  
+_Détection d'anomalies :_   
 - Offre une précision élevée pour la classe 0, mais son rappel pour la classe 1 est très faible, ce qui signifie qu'il détecte très peu de fraudes (beaucoup de faux négatifs).  
   
-* * SVM :  
+_SVM :_  
 - Offre une excellente précision et rappel pour la classe 0.
 La précision et le rappel pour la classe 1 sont inférieurs à ceux de Random Forest, mais meilleurs que ceux de la détection d'anomalies.  
 
