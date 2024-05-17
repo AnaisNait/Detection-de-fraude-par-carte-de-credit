@@ -370,7 +370,7 @@ Pour la classe 1 (transactions frauduleuses), la précision est de 0.60, le rapp
 En comparant ces résultats avec ceux de l'Isolation Forest, il semble que le SVM ait de meilleures performances.   
 
 # 7- Comparaison des résultats 
-[![ComparaisonDesResultats](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/main/Comparaison.png)](#)
+![Comparaison](Figures/Comparaison.png)
 
 
 # 8- Conclusion
