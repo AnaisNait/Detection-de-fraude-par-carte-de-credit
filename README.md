@@ -369,10 +369,19 @@ Pour la classe 1 (transactions frauduleuses), la précision est de 0.60, le rapp
 
 En comparant ces résultats avec ceux de l'Isolation Forest, il semble que le SVM ait de meilleures performances.   
 
-# 7- Comparaison des résultats 
+# 7- Comparaison des résultats  
+| Algorithme             | Précision Classe 0 | Rappel Classe 0 | Précision Classe 1 | Rappel Classe 1 |
+|------------------------|--------------------|-----------------|--------------------|-----------------|
+| Random Forest          | 1.00               | 1.00            | 0.93               | 0.76            |
+| Détection d'anomalies  | 1.00               | 0.98            | 0.03               | 0.28            |
+| SVM                    | 1.00               | 1.00            | 0.60               | 0.30            |
+| Arbres de décision     | -                  | -               | -                  | -               |  
+
 [![Comparaison](https://github.com/AnaisNait/Detection-de-fraude-par-carte-de-credit/assets/103700341/8787bda5-569b-4198-84ca-df27263987df)](#)
 
-
+Random Forest et SVM montrent des performances solides pour la classe majoritaire (classe 0) et de bonnes performances pour la classe minoritaire (classe 1), avec Random Forest offrant un meilleur rappel pour la classe 1.  
+Détection d'anomalies est moins efficace pour détecter les fraudes, avec un rappel et une précision faibles pour la classe 1.  
+Arbres de décision offrent une précision globale élevée, mais il est probable qu'ils sous-détectent la classe minoritaire en raison de l'équilibre des classes.
 
 # 8- Conclusion
 L'algorithme de détection d'anomalies  a montré une performance plutôt médiocre pour la détection de fraudes dans ce dataset. Bien qu'il ait réussi à détecter la majorité des transactions non frauduleuses avec une précision élevée (98%), il a eu du mal à identifier les transactions frauduleuses, comme en témoigne le rappel très faible pour cette classe (83%).   
